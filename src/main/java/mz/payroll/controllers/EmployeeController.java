@@ -22,12 +22,14 @@ public class EmployeeController {
 
     //Constructor Injection
     private final EmployeeRepository employeeRepository;
+
     private final EmployeeModelAssembler employeeModelAssembler;
 
     public EmployeeController(EmployeeRepository repository, EmployeeModelAssembler employeeModelAssembler) {
         this.employeeRepository = repository;
         this.employeeModelAssembler = employeeModelAssembler;
     }
+
 
     @GetMapping("/allEmployees")
     public CollectionModel<EntityModel<Employee>> showAllEmployeesFromDB() {
